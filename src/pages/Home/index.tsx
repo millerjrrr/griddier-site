@@ -1,6 +1,9 @@
+import OpenBanner from "../../components/OpenBanner";
+
 export default function Home() {
   return (
-    <div className="p-6 min-h-screen bg-gradient-to-b from-PRIMARY to-TERTIARY flex flex-col items-start justify-center">
+    <div className="p-6 min-h-screen  flex flex-col items-start justify-center">
+      <OpenBanner />
       <h1 className="text-4xl font-extrabold mb-4 text-CONTRAST drop-shadow">
         Home
       </h1>
