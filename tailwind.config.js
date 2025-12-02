@@ -28,7 +28,7 @@ export default {
         },
       },
       animation: {
-        pulseScale: "pulseScale 1.6s ease-in-out infinite",
+        pulseScale: "pulseScale 2s ease-in-out infinite",
       },
     },
   },
