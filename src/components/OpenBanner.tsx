@@ -3,11 +3,12 @@ import { urls } from "../assets/urls";
 import RPhone from "./RPhone";
 
 const OpenBanner = () => {
-  const { title, subTitle, tagLine } = siteContent.home;
+  const { title, subTitle, tagLine } = siteContent.home.openingBanner;
 
   return (
     <div className="opening-banner">
       <div className="animate-pulseScale inline-block block flex justify-center">
+        <img className="app-icon" src="app-icon.png" />
         <h1 className="">{title}</h1>
         <p className=" pb-4 font-bold">{subTitle}</p>
         <p className=" pb-1 font-bold md:text-xl ">{tagLine}</p>

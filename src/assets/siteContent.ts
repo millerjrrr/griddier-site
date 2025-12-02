@@ -13,9 +13,21 @@ const siteContent: ContentStructure = {
       "Rua Cel. Luis Barroso \n Santo Amaro \n São Paulo \n SP · Brazil · 04750-030",
   },
   home: {
-    title: "GRIDDIER",
-    subTitle: "preflop trainer",
-    tagLine: "Take your preflop game to the next level",
+    openingBanner: {
+      title: "GRIDDIER",
+      subTitle: "preflop trainer",
+      tagLine: "Take your preflop game to the next level",
+    },
+    informationBanner: {
+      introductionTitle: "An Optimized Approach",
+      introductionText: "Remove inefficient and unnecessary repetition",
+      title1: "DEVELOP PICTURE PERFECT MEMORY",
+      description1: "",
+      title2: "",
+      description2: "",
+      title3: "",
+      description3: "",
+    },
   },
 };
 

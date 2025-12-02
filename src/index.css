@@ -28,7 +28,7 @@
 
 @layer components {
   .site-icon {
-    @apply w-12 h-12 md:w-24 md:h-24;
+    @apply w-12 rounded-[12px] aspect-square shadow-lg md:w-24 md:rounded-[24px];
   }
   .app-link {
     @apply p-2 text-WHITE text-base hover:text-CONTRAST transition-colors cursor-pointer hover:text-[16.2px];
@@ -43,6 +43,9 @@
     @apply p-1 h-[70px] md:p-3 md:h-[90px];
   }
   .badge-container {
-    @apply flex flex-col md:flex-row;
+    @apply flex flex-col justify-center items-center md:flex-row;
+  }
+  .app-icon {
+    @apply rounded-[75px] w-[300px] aspect-square shadow-lg m-5;
   }
 }

@@ -9,8 +9,20 @@ export interface ContentStructure {
     address: string;
   };
   home: {
-    title: string;
-    subTitle: string;
-    tagLine: string;
+    openingBanner: {
+      title: string;
+      subTitle: string;
+      tagLine: string;
+    };
+    informationBanner: {
+      introductionTitle: string;
+      introductionText: string;
+      title1: string;
+      description1: string;
+      title2: string;
+      description2: string;
+      title3: string;
+      description3: string;
+    };
   };
 }
