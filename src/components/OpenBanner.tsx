@@ -1,4 +1,5 @@
 import siteContent from "../assets/siteContent";
+import { urls } from "../assets/urls";
 import RPhone from "./RPhone";
 
 const OpenBanner = () => {
@@ -11,8 +12,22 @@ const OpenBanner = () => {
         <p className=" pb-4 font-bold">{subTitle}</p>
         <p className=" pb-1 font-bold md:text-xl ">{tagLine}</p>
         <div className="badge-container">
-          <img src="images/app-store.svg" className="badge" />
-          <img src="images/play-store.svg" className="badge" />
+          <a
+            href={urls.appStore}
+            className="app-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/app-store.svg" className="badge" />
+          </a>
+          <a
+            href={urls.playStore}
+            className="app-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/play-store.svg" className="badge" />
+          </a>
         </div>
       </div>
       <RPhone />
