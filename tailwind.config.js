@@ -13,6 +13,7 @@ export default {
         SECONDARY: "#640092",
         TERTIARY: "#ae00ff",
         CONTRAST: "#efccff",
+        CONTRASTB: "#EEDFA4",
         RED: "#ffb9a8ff",
         GREEN: "#76cf70",
         TURQ: "#65B9A9",
@@ -26,9 +27,17 @@ export default {
           "0%, 100%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.05)" },
         },
+        flyInRight: {
+          "0%": { opacity: 0, transform: "translateX(60px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
       },
       animation: {
         pulseScale: "pulseScale 2s ease-in-out infinite",
+        flyInRight: "flyInRight 0.6s ease-out forwards",
+      },
+      boxShadow: {
+        white: "0 0 5px rgba(255, 255, 255, 0.6)",
       },
     },
   },

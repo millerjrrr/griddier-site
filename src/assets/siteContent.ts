@@ -21,12 +21,12 @@ const siteContent: ContentStructure = {
     informationBanner: {
       introductionTitle: "An Optimized Approach",
       introductionText: "Remove inefficient and unnecessary repetition",
-      title1: "DEVELOP PICTURE PERFECT MEMORY",
-      description1: "",
-      title2: "",
-      description2: "",
-      title3: "",
-      description3: "",
+      titles: ["PRIORITIZE", "MEMORIZE", "REVISE"],
+      descriptions: [
+        "While you can study ranges in any order, following our learning path allows you to prioritize the ranges that matter most.",
+        "Griddier is designed to make range memorization easy. Surprise yourself by how fast you can memorize these ranges perfectly!",
+        "Each time you revise a range perfectly its level increases. Having a range on level 6 for example means the student revised that range perfectly 6 times in a row!",
+      ],
     },
   },
 };

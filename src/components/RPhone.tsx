@@ -5,9 +5,13 @@ import { useEffect, useRef, useState, useMemo } from "react";
 
 interface RotatingPhoneProps {
   screenshots: string[];
+  name?: "OpenBannerPhone" | "InformationBannerPhone";
 }
 
-const RotatingPhone: React.FC<RotatingPhoneProps> = ({ screenshots }) => {
+const RotatingPhone: React.FC<RotatingPhoneProps> = ({
+  screenshots,
+  name = "OpenBannerPhone",
+}) => {
   const { scene } = useGLTF("/models/iPhone.glb");
 
   // React-safe render object
@@ -15,6 +19,7 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({ screenshots }) => {
 
   // Mutable reference for rotation, materials, UV changes
   const phoneRef = useRef<THREE.Group | null>(null);
+  const uvAdjusted = useRef(false);
 
   // Clone + UV fix (runs once)
   useEffect(() => {
@@ -24,12 +29,15 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({ screenshots }) => {
     const uv = (screenMesh.geometry as THREE.BufferGeometry).attributes
       .uv as THREE.BufferAttribute;
 
-    for (let i = 0; i < uv.count; i++) {
-      const x = uv.getX(i);
-      uv.setX(i, 0.5 + (x - 0.5) * 1.5);
+    // run this block only once
+    if (!uvAdjusted.current) {
+      for (let i = 0; i < uv.count; i++) {
+        const x = uv.getX(i);
+        uv.setX(i, 0.5 + (x - 0.5) * 1.5);
+      }
+      uv.needsUpdate = true;
+      uvAdjusted.current = true;
     }
-
-    uv.needsUpdate = true;
 
     phoneRef.current = clone; // mutable
     Promise.resolve().then(() => {
@@ -77,16 +85,33 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({ screenshots }) => {
 
   // Rotation animation
   const t = useRef(0);
+
+  let rotateFunction = (current: number) =>
+    Math.PI * 0.9 + Math.sin(current * 2) * 0.2;
+
+  let scale = 23;
+
+  switch (name) {
+    case "InformationBannerPhone":
+      rotateFunction = (current: number) => {
+        const value = Math.PI * 1 + Math.tan(current) * 0.2;
+
+        return value;
+      };
+      scale = 22;
+      break;
+  }
+
   useFrame(() => {
     if (!phoneRef.current) return;
 
     t.current += 0.01;
-    phoneRef.current.rotation.y = Math.PI * 0.9 + Math.sin(t.current * 2) * 0.2;
+    phoneRef.current.rotation.y = rotateFunction(t.current);
   });
 
   return (
     <Center key={renderPhone ? "ready" : "loading"}>
-      <group scale={24}>
+      <group scale={scale}>
         {renderPhone && <primitive object={renderPhone} />}
       </group>
     </Center>
@@ -94,18 +119,30 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({ screenshots }) => {
 };
 
 interface RPhoneProps {
+  name?: "OpenBannerPhone" | "InformationBannerPhone";
+  screenshots?: string[];
   scale?: number;
 }
 
-export const RPhone: React.FC<RPhoneProps> = ({ scale = 300 }) => {
+export const RPhone: React.FC<RPhoneProps> = ({
+  scale = 300,
+  screenshots = ["screenshots/Trainer.jpg"],
+  name,
+}) => {
   const width = Math.min(scale, window.innerWidth - 50);
 
   return (
-    <div style={{ width, height: width * 2.3 }}>
+    <div
+      style={{
+        width,
+        height: width * 2.3,
+        overflow: "visible",
+      }}
+    >
       <Canvas camera={{ position: [0, 0, 3] }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <RotatingPhone screenshots={["screenshots/Trainer.jpg"]} />
+        <RotatingPhone screenshots={screenshots} name={name} />
       </Canvas>
     </div>
   );
