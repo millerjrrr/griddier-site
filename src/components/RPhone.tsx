@@ -271,7 +271,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
 
 export const RPhone: React.FC<RPhoneProps> = ({
   scale = 300,
-  screenshots = ["screenshots/Trainer.jpg"],
+  screenshots = ["Trainer"],
   name,
 }) => {
   let width = Math.min(scale, window.innerWidth - 50);
@@ -282,6 +282,10 @@ export const RPhone: React.FC<RPhoneProps> = ({
   }
 
   const position = new THREE.Vector3(0, 0, 3);
+
+  const fileRoutes = screenshots.map(
+    (screenshotName) => `screenshots/${screenshotName}.jpg`
+  );
 
   return (
     <div
@@ -298,7 +302,7 @@ export const RPhone: React.FC<RPhoneProps> = ({
       <Canvas camera={{ position }}>
         <ambientLight intensity={name === "iPhone" ? 0.7 : 10} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <RotatingPhone screenshots={screenshots} name={name} />
+        <RotatingPhone screenshots={fileRoutes} name={name} />
       </Canvas>
     </div>
   );

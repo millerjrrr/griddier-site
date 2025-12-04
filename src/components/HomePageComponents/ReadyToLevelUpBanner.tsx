@@ -46,10 +46,14 @@ const ReadyToLevelUpBanner = () => {
                     "
           ></div>
           <div className="flex justify-center">
-            <RPhone name="gPhone-L" scale={250} />
+            <RPhone name="gPhone-L" scale={250} screenshots={["RangeList"]} />
           </div>
           <div className="flex justify-center">
-            <RPhone name="gPhone-R" scale={250} />
+            <RPhone
+              name="gPhone-R"
+              scale={250}
+              screenshots={["ProgressViewer"]}
+            />
           </div>
         </div>
       </div>

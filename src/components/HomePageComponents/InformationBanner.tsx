@@ -69,7 +69,7 @@ const InformationBanner = () => {
         </div>
 
         <div className="md:px-[60px] flex justify-center order-2 md:order-1">
-          <RPhone name="sPhone" />
+          <RPhone name="sPhone" screenshots={["RangeModal"]} />
         </div>
       </div>
     </div>
