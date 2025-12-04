@@ -11,8 +11,8 @@ export default function Footer() {
         </div>
         <div className="block text-left px-4 pt-3">
           <h2 className="pb-3">Useful Links</h2>
-          <p className=" app-link">Terms & Conditions</p>
-          <p className=" app-link">Privacy Policy</p>
+          <p className=" app-link  p-2 ">Terms & Conditions</p>
+          <p className=" app-link  p-2 ">Privacy Policy</p>
         </div>
         <div className="block text-left px-4 pt-3 whitespace-pre-line">
           <h2 className="pb-3">Address</h2>

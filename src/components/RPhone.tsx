@@ -3,26 +3,28 @@ import { useFrame, Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect, useRef, useState, useMemo } from "react";
 
-interface RotatingPhoneProps {
-  screenshots: string[];
-  name: string;
+interface RPhoneProps {
+  name: "iPhone" | "sPhone" | "gPhone-L" | "gPhone-R";
+  screenshots?: string[];
+  scale?: number;
 }
 
-const RotatingPhone: React.FC<RotatingPhoneProps> = ({
-  screenshots,
+const RotatingPhone: React.FC<RPhoneProps> = ({
   name = "iPhone",
+  screenshots = ["screenshots/Trainer.jpg"],
 }) => {
   let source = "/models/iPhone.glb";
   let screenMeshName = "LLCOsMNMwTSiaFM_0";
 
   switch (name) {
-    case "gPhone":
-      source = "/models/gPhone.glb";
-      screenMeshName = "Object_20";
-      break;
     case "sPhone":
       source = "/models/sPhone.glb";
       screenMeshName = "Object_6";
+      break;
+    case "gPhone-L":
+    case "gPhone-R":
+      source = "/models/gPhone.glb";
+      screenMeshName = "Object_20";
       break;
   }
 
@@ -81,16 +83,6 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({
           uv.needsUpdate = true;
           uvAdjusted.current = true;
           break;
-        case "gPhone":
-          for (let i = 0; i < uv.count; i++) {
-            const x = uv.getX(i);
-            uv.setX(i, 0.5 + (x - 0.5) * 1.2);
-            const y = uv.getY(i);
-            uv.setY(i, 0.5 + (y - 0.5) * 1.1);
-          }
-          uv.needsUpdate = true;
-          uvAdjusted.current = true;
-          break;
         case "sPhone":
           {
             let minV = Infinity;
@@ -132,6 +124,17 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({
             uvAdjusted.current = true;
           }
           break;
+        case "gPhone-L":
+        case "gPhone-R":
+          for (let i = 0; i < uv.count; i++) {
+            const x = uv.getX(i);
+            uv.setX(i, 0.5 + (x - 0.5) * 1.2);
+            const y = uv.getY(i);
+            uv.setY(i, 0.5 + (y - 0.5) * 1.1);
+          }
+          uv.needsUpdate = true;
+          uvAdjusted.current = true;
+          break;
       }
     }
 
@@ -155,13 +158,14 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({
           tex.repeat.x = -1;
           tex.offset.x = 1;
           break;
-        case "gPhone":
-          tex.repeat.x = 1;
-          tex.offset.x = 0;
-          break;
         case "sPhone":
           tex.repeat.x = -1;
           tex.offset.x = 1;
+          break;
+        case "gPhone-L":
+        case "gPhone-R":
+          tex.repeat.x = 1;
+          tex.offset.x = 0;
           break;
       }
 
@@ -210,26 +214,39 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({
         x: 0,
         y:
           Math.PI * 0.9 +
-          Math.sin(current * 2) * 0.2 +
+          Math.sin(current * 2) * 0.2 -
           (scroll ? scroll * 3 : 0),
         z: 0,
       });
-      break;
-    case "gPhone":
-      rotateFunction = (current: number) => ({
-        x: 0,
-        y: Math.tan(current * 2) * 0.2,
-        z: 0,
-      });
-      scale = 22;
       break;
     case "sPhone":
       rotateFunction = (current: number, scroll?: number) => ({
         x: Math.PI / 2 - 0.1,
         y: 0,
-        z: (scroll ? scroll * 3 : 0) + Math.sin(current * 2) * 0.1,
+        z:
+          Math.PI +
+          Math.tan(
+            current * (scroll && scroll > 0.25 && scroll < 0.75 ? 1 : 2)
+          ) *
+            0.2,
       });
       scale = 1.3;
+      break;
+    case "gPhone-L":
+      rotateFunction = (current: number) => ({
+        x: 0,
+        y: -0.7 - Math.sin(current * 1.5) * 0.05,
+        z: 0,
+      });
+      scale = 22;
+      break;
+    case "gPhone-R":
+      rotateFunction = (current: number) => ({
+        x: 0,
+        y: 0.7 + Math.sin(current * 1.5) * 0.05,
+        z: 0,
+      });
+      scale = 22;
       break;
   }
 
@@ -251,39 +268,34 @@ const RotatingPhone: React.FC<RotatingPhoneProps> = ({
   );
 };
 
-interface RPhoneProps {
-  name: "iPhone" | "sPhone" | "gPhone";
-  screenshots?: string[];
-  scale?: number;
-}
-
 export const RPhone: React.FC<RPhoneProps> = ({
   scale = 300,
   screenshots = ["screenshots/Trainer.jpg"],
   name,
 }) => {
-  const width = Math.min(scale, window.innerWidth - 50);
-
-  let position = new THREE.Vector3(0, 0, 3);
-  switch (name) {
-    case "sPhone":
-      position = new THREE.Vector3(0, 0, 3);
-      break;
-    case "gPhone":
-      position = new THREE.Vector3(0, 0, 3);
-      break;
+  let width = Math.min(scale, window.innerWidth - 50);
+  let height = width * 2.3;
+  if (name === "gPhone-L" || name === "gPhone-R") {
+    width = Math.min(window.innerWidth / 2 - 25, scale * 0.9);
+    height = width * 2.7;
   }
+
+  const position = new THREE.Vector3(0, 0, 3);
 
   return (
     <div
       style={{
         width,
-        height: width * 2.3,
+        height,
         overflow: "visible",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        // backgroundColor: "red",
       }}
     >
       <Canvas camera={{ position }}>
-        <ambientLight intensity={10} />
+        <ambientLight intensity={name === "iPhone" ? 0.7 : 10} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
         <RotatingPhone screenshots={screenshots} name={name} />
       </Canvas>

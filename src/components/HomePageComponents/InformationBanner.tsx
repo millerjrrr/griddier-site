@@ -18,7 +18,7 @@ const BannerCard: React.FC<{
         bg-PRIMARY shadow-[0_0_20px_0_rgba(255,255,255,0.9)]
         h-[175px] md:h-[125px]
         flex flex-col items-start justify-center
-        m-5 p-5 text-left rounded-2xl
+        m-5 p-5 text-left rounded-2xl 
         ${
           inView
             ? `animate-flyInRight ${delays[delay]}`
@@ -37,7 +37,18 @@ const InformationBanner = () => {
     siteContent.home.informationBanner;
 
   return (
-    <div className="bg-SECONDARY w-full flex flex-1 justify-center items-center">
+    <div className="border-t-2 border-b-2 border-TERTIARY w-full flex flex-1 justify-center items-center">
+      <div
+        className=" absolute 
+                        w-full 
+                        h-[20px] 
+                        rounded-full 
+                        bg-WHITE
+                        opacity-100 
+                        blur-[100px] 
+                        z-0
+                    "
+      ></div>
       <div className="inner-container flex-col md:flex-row">
         <div className="flex items-center order-1 md:order-2">
           <div>

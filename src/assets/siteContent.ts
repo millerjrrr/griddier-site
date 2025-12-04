@@ -28,6 +28,15 @@ const siteContent: ContentStructure = {
         "Each time you revise a range perfectly its level increases. Having a range on level 6 for example means the student revised that range perfectly 6 times in a row!",
       ],
     },
+    readyToLevelUpBanner: {
+      title: "Take Your Preflop Game \nTo The Next Level",
+      bullets: [
+        "Download Griddier for free, no account needed",
+        "Free while we grow our first 100 players",
+        "Build real range memory through fast-paced repetition",
+        "Made for both high level grinders and beginners",
+      ],
+    },
   },
 };
 

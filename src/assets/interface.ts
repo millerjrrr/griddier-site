@@ -20,5 +20,9 @@ export interface ContentStructure {
       titles: string[];
       descriptions: string[];
     };
+    readyToLevelUpBanner: {
+      title: string;
+      bullets: string[];
+    };
   };
 }

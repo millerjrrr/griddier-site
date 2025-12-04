@@ -24,13 +24,13 @@ export default function Header() {
             }`}
           />
           <div className="flex flex-row bg-PRIMARY md:bg-transparent pl-2 rounded-l-full translate-x-[8px] border-2 border-TERTIARY border-r-0 md:border-0">
-            <a href="/" className="app-link">
+            <a href="/" className="app-link  p-2 ">
               HOME
             </a>
-            <a href="/about" className="app-link">
+            <a href="/about" className="app-link  p-2 ">
               ABOUT
             </a>
-            <a href="contact" className="app-link">
+            <a href="contact" className="app-link  p-2 ">
               WEB APP
             </a>
           </div>
