@@ -32,7 +32,7 @@ const siteContent: ContentStructure = {
       title: "Take Your Preflop Game \nTo The Next Level",
       bullets: [
         "Download Griddier for free, no account needed",
-        "Free while we grow our first 100 players",
+        "Free during launch phase",
         "Build real range memory through fast-paced repetition",
         "Made for both high level grinders and beginners",
       ],

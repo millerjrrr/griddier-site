@@ -14,23 +14,23 @@ export default function Header() {
 
   return (
     <div>
-      <div className="h-20"></div>
+      <div className="h-15"></div>
       <header className="header">
         <div className="inner-container flex-row">
           <img
             src="app-icon.png"
-            className={`site-icon bg-PRIMARY md:bg-transparent rounded-[] ${
+            className={`site-icon rounded-[] bg-PRIMARY md:bg-transparent ${
               show ? "opacity-100" : "md:opacity-0"
             }`}
           />
-          <div className="flex flex-row bg-PRIMARY md:bg-transparent pl-2 rounded-l-full translate-x-[8px] border-2 border-TERTIARY border-r-0 md:border-0">
-            <a href="/" className="app-link  p-2 ">
+          <div className="flex flex-row rounded-l-full border-2 border-r-0 border-TERTIARY bg-PRIMARY pl-2 md:border-0 md:bg-transparent">
+            <a href="/" className="app-link p-2">
               HOME
             </a>
-            <a href="/about" className="app-link  p-2 ">
+            <a href="/about" className="app-link p-2">
               ABOUT
             </a>
-            <a href="contact" className="app-link  p-2 ">
+            <a href="contact" className="app-link p-2">
               WEB APP
             </a>
           </div>

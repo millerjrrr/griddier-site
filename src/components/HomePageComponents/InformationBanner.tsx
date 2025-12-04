@@ -14,17 +14,11 @@ const BannerCard: React.FC<{
   return (
     <div
       ref={ref}
-      className={`
-        bg-PRIMARY shadow-[0_0_20px_0_rgba(255,255,255,0.9)]
-        h-[175px] md:h-[125px]
-        flex flex-col items-start justify-center
-        m-5 p-5 text-left rounded-2xl 
-        ${
-          inView
-            ? `animate-flyInRight ${delays[delay]}`
-            : "opacity-0 translate-x-[60px]"
-        }
-      `}
+      className={`m-5 flex h-[175px] flex-col items-start justify-center rounded-2xl bg-PRIMARY p-5 text-left shadow-[0_0_20px_0_rgba(255,255,255,0.9)] md:h-[125px] ${
+        inView
+          ? `animate-flyInRight ${delays[delay]}`
+          : "translate-x-[60px] opacity-0"
+      } `}
     >
       <h3>{title}</h3>
       <p>{description}</p>
@@ -37,22 +31,12 @@ const InformationBanner = () => {
     siteContent.home.informationBanner;
 
   return (
-    <div className="border-t-2 border-b-2 border-TERTIARY w-full flex flex-1 justify-center items-center">
-      <div
-        className=" absolute 
-                        w-full 
-                        h-[20px] 
-                        rounded-full 
-                        bg-WHITE
-                        opacity-100 
-                        blur-[100px] 
-                        z-0
-                    "
-      ></div>
+    <div className="flex w-full flex-1 items-center justify-center border-b-2 border-t-2 border-TERTIARY">
+      {/* <div className="absolute z-0 h-[20px] w-full rounded-full bg-WHITE opacity-100 blur-[100px]"></div> */}
       <div className="inner-container flex-col md:flex-row">
-        <div className="flex items-center order-1 md:order-2">
+        <div className="order-1 flex items-center md:order-2">
           <div>
-            <div className="h-25 flex flex-1 flex-col items-start m-5  px-5  text-left">
+            <div className="h-25 m-5 flex flex-1 flex-col items-start px-5 text-left">
               <h3>INTRODUCTION</h3>
               <h2>{introductionTitle}</h2>
               <p>{introductionText}</p>
@@ -68,7 +52,7 @@ const InformationBanner = () => {
           </div>
         </div>
 
-        <div className="md:px-[60px] flex justify-center order-2 md:order-1">
+        <div className="order-2 flex justify-center md:order-1 md:px-[60px]">
           <RPhone name="sPhone" screenshots={["RangeModal"]} />
         </div>
       </div>

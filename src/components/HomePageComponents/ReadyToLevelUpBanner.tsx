@@ -6,7 +6,7 @@ import { FaCheck } from "react-icons/fa";
 const BulletTick: React.FC<{ text: string }> = ({ text }) => {
   return (
     <div className="flex items-start gap-2">
-      <div className="bg-WHITE text-PRIMARY p-1 rounded-full flex items-center justify-center">
+      <div className="flex items-center justify-center rounded-full bg-WHITE p-1 text-PRIMARY">
         <FaCheck size={10} />
       </div>
       <p className="text-WHITE">{text}</p>
@@ -18,13 +18,13 @@ const ReadyToLevelUpBanner = () => {
   const { title, bullets } = siteContent.home.readyToLevelUpBanner;
 
   return (
-    <div className="w-full flex flex-1 justify-center items-center">
+    <div className="flex w-full flex-1 items-center justify-center">
       <div className="inner-container flex-col md:flex-row">
-        <div className="flex flex-1  items-center">
+        <div className="flex flex-1 items-center">
           <div>
-            <div className="h-25 flex flex-1 flex-col items-start m-1  px-5  text-left">
+            <div className="h-25 m-1 flex flex-1 flex-col items-start px-5 text-left">
               <h3>READY TO LEVEL UP</h3>
-              <h2 className="mb-4  text-left whitespace-pre-line">{title}</h2>
+              <h2 className="mb-4 whitespace-pre-line text-left">{title}</h2>
               {bullets.map((_, index) => (
                 <BulletTick key={index} text={bullets[index]} />
               ))}
@@ -32,19 +32,9 @@ const ReadyToLevelUpBanner = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-1 flex-row h-[500px] justify-center items-center">
+        <div className="flex h-[500px] flex-1 flex-row items-center justify-center">
           {/* Glowing back light */}
-          <div
-            className=" absolute 
-                        w-[600px] 
-                        h-[600px] 
-                        rounded-full 
-                        bg-WHITE
-                        opacity-40 
-                        blur-[120px] 
-                        z-0
-                    "
-          ></div>
+          {/* <div className="absolute z-0 h-[600px] w-[600px] rounded-full bg-WHITE opacity-40 blur-[120px]"></div> */}
           <div className="flex justify-center">
             <RPhone name="gPhone-L" scale={250} screenshots={["RangeList"]} />
           </div>

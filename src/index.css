@@ -4,54 +4,54 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-b from-PRIMARY to-TERTIARY max-w-full;
+    @apply max-w-full bg-gradient-to-b from-PRIMARY to-TERTIARY;
   }
-  /* * {
+  * {
     outline: 1px solid red;
-  } */
+  }
   .content-container {
-    @apply flex flex-1 flex-col mx-auto w-full max-w-full;
+    @apply mx-auto flex w-full max-w-full flex-1 flex-col;
   }
   header {
-    @apply flex flex-row justify-center fixed top-0 left-0 z-50 w-full max-w-full;
+    @apply fixed left-0 top-0 z-50 flex w-full max-w-full flex-row justify-center;
   }
   .inner-container {
-    @apply flex justify-between font-bold p-2 md:p-4 w-full max-w-full md:max-w-6xl;
+    @apply flex w-full max-w-full justify-between p-2 font-bold md:max-w-6xl md:p-4;
   }
   h1 {
-    @apply text-white font-bold text-5xl md:text-6xl text-center hover:scale-105 cursor-pointer inline-block;
+    @apply inline-block cursor-pointer text-center text-5xl font-bold text-white hover:scale-105 md:text-6xl;
   }
   h2 {
-    @apply text-white font-bold text-2xl md:text-3xl text-center hover:scale-105 cursor-pointer inline-block;
+    @apply inline-block cursor-pointer text-center text-2xl font-bold text-white hover:scale-105 md:text-3xl;
   }
   h3 {
-    @apply text-CONTRASTB font-bold text-lg md:text-lg text-center hover:scale-105 cursor-pointer inline-block;
+    @apply inline-block cursor-pointer text-center text-lg font-bold text-CONTRASTB hover:scale-105 md:text-lg;
   }
   p {
-    @apply text-CONTRAST text-base;
+    @apply text-base text-CONTRAST;
   }
 }
 
 @layer components {
   .site-icon {
-    @apply w-12 rounded-[12px] aspect-square shadow-lg md:w-24 md:rounded-[24px];
+    @apply aspect-square w-12 rounded-[12px] shadow-lg md:w-24 md:rounded-[24px];
   }
   .app-link {
-    @apply text-WHITE text-base hover:text-CONTRAST transition-colors cursor-pointer hover:text-[16.2px] hover:-translate-y-[3px];
+    @apply cursor-pointer text-base text-WHITE transition-colors hover:-translate-y-[3px] hover:text-[16.2px] hover:text-CONTRAST;
   }
   .opening-banner {
-    @apply flex flex-col items-center  md:flex-row;
+    @apply flex flex-col items-center md:flex-row;
   }
   .block {
-    @apply flex flex-1 flex-col items-center text-center justify-center;
+    @apply flex flex-1 flex-col items-center justify-center text-center;
   }
   .badge {
-    @apply p-1 h-[70px] md:p-3 md:h-[90px];
+    @apply h-[70px] p-1 md:h-[90px] md:p-3;
   }
   .badge-container {
-    @apply flex flex-col justify-center items-center md:flex-row;
+    @apply flex flex-col items-center justify-center md:flex-row;
   }
   .app-icon {
-    @apply rounded-[75px] w-[300px] aspect-square shadow-lg m-5;
+    @apply m-5 aspect-square w-[300px] rounded-[75px] shadow-lg;
   }
 }

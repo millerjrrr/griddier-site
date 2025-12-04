@@ -207,7 +207,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
     z: number;
   };
 
-  let scale = 23;
+  let scale;
 
   switch (name) {
     case "iPhone":
@@ -219,6 +219,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
           (scroll ? scroll * 3 : 0),
         z: 0,
       });
+      scale = 21;
       break;
     case "sPhone":
       rotateFunction = (current: number, scroll?: number) => ({
@@ -270,7 +271,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
 };
 
 export const RPhone: React.FC<RPhoneProps> = ({
-  scale = 300,
+  scale = 350,
   screenshots = ["Trainer"],
   name,
 }) => {
