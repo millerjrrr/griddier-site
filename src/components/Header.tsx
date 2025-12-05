@@ -15,7 +15,11 @@ export default function Header() {
   return (
     <div>
       <header className="header">
-        <div className="inner-container flex-row opacity-70 md:opacity-100">
+        <div
+          className={`inner-container flex-row ${
+            show ? "py-1 opacity-60" : ""
+          } md:opacity-100`}
+        >
           <img
             src="app-icon.png"
             className={`site-icon rounded-[] bg-PRIMARY md:bg-transparent ${

@@ -37,7 +37,7 @@
 
 @layer components {
   .site-icon {
-    @apply aspect-square w-12 rounded-[12px] shadow-lg md:w-24 md:rounded-[24px];
+    @apply aspect-square w-12 rounded-[12px] shadow-lg;
   }
   .app-link {
     @apply cursor-pointer text-base text-WHITE transition-colors hover:-translate-y-[3px] hover:text-[16.2px] hover:text-CONTRAST;
