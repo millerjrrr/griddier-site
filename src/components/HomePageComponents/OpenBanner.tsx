@@ -16,7 +16,7 @@ const OpenBanner = () => {
           <BadgeContainer />
         </div>
         <div className="flex items-center justify-center">
-          {/* <div className="absolute z-0 h-[600px] w-[600px] rounded-full bg-TERTIARY opacity-40 blur-[120px]"></div> */}
+          <div className="absolute z-0 h-[600px] w-[600px] rounded-full bg-TERTIARY opacity-40 blur-[120px]"></div>
           <RPhone name="iPhone" />
         </div>
       </div>

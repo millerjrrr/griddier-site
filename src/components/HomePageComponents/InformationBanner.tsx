@@ -32,7 +32,7 @@ const InformationBanner = () => {
 
   return (
     <div className="flex w-full flex-1 items-center justify-center border-b-2 border-t-2 border-TERTIARY">
-      {/* <div className="absolute z-0 h-[20px] w-full rounded-full bg-WHITE opacity-100 blur-[100px]"></div> */}
+      <div className="absolute z-0 h-[20px] w-full rounded-full bg-WHITE opacity-100 blur-[100px]"></div>
       <div className="inner-container flex-col md:flex-row">
         <div className="order-1 flex items-center md:order-2">
           <div>

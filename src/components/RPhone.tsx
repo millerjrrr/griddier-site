@@ -186,7 +186,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
     if (!phoneRef.current) return;
 
     const screenMesh = phoneRef.current.getObjectByName(
-      screenMeshName
+      screenMeshName,
     ) as THREE.Mesh;
 
     screenMesh.material = new THREE.MeshBasicMaterial({
@@ -200,7 +200,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
 
   let rotateFunction: (
     current: number,
-    scroll?: number
+    scroll?: number,
   ) => {
     x: number;
     y: number;
@@ -228,7 +228,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
         z:
           Math.PI +
           Math.tan(
-            current * (scroll && scroll > 0.25 && scroll < 0.75 ? 1 : 2)
+            current * (scroll && scroll > 0.25 && scroll < 0.75 ? 1 : 2),
           ) *
             0.2,
       });
@@ -278,14 +278,14 @@ export const RPhone: React.FC<RPhoneProps> = ({
   let width = Math.min(scale, window.innerWidth - 50);
   let height = width * 2.3;
   if (name === "gPhone-L" || name === "gPhone-R") {
-    width = Math.min(window.innerWidth / 2 - 25, scale * 0.9);
+    width = Math.min(window.innerWidth / 2 - 30, scale * 0.9);
     height = width * 2.7;
   }
 
   const position = new THREE.Vector3(0, 0, 3);
 
   const fileRoutes = screenshots.map(
-    (screenshotName) => `screenshots/${screenshotName}.jpg`
+    (screenshotName) => `screenshots/${screenshotName}.jpg`,
   );
 
   return (
@@ -293,7 +293,6 @@ export const RPhone: React.FC<RPhoneProps> = ({
       style={{
         width,
         height,
-        overflow: "visible",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

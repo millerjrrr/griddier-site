@@ -24,5 +24,6 @@ export interface ContentStructure {
       title: string;
       bullets: string[];
     };
+    FAQ: { q: `${string}?`; a: string }[];
   };
 }

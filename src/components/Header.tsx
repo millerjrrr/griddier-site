@@ -27,9 +27,9 @@ export default function Header() {
             <a href="/" className="app-link p-2">
               HOME
             </a>
-            <a href="/about" className="app-link p-2">
+            {/* <a href="/about" className="app-link p-2">
               ABOUT
-            </a>
+            </a> */}
             <a href="contact" className="app-link p-2">
               WEB APP
             </a>

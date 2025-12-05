@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 export default function App() {
   return (
     <div className="flex min-h-screen w-full flex-col">
-      {/* <Header /> */}
+      <Header />
       <main className="content-container">
         <Routes>
           <Route path="/" element={<Home />} />
