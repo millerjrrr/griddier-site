@@ -14,9 +14,8 @@ export default function Header() {
 
   return (
     <div>
-      <div className="h-[70px] md:h-[100px]"></div>
       <header className="header">
-        <div className="inner-container flex-row">
+        <div className="inner-container flex-row opacity-70 md:opacity-100">
           <img
             src="app-icon.png"
             className={`site-icon rounded-[] bg-PRIMARY md:bg-transparent ${
@@ -30,7 +29,7 @@ export default function Header() {
             {/* <a href="/about" className="app-link p-2">
               ABOUT
             </a> */}
-            <a href="contact" className="app-link p-2">
+            <a href="web-app" className="app-link p-2">
               WEB APP
             </a>
           </div>
