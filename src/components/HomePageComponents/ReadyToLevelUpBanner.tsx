@@ -19,12 +19,12 @@ const ReadyToLevelUpBanner = () => {
 
   return (
     <div className="flex w-full flex-1 items-center justify-center">
-      <div className="inner-container flex-col md:flex-row">
+      <div className="inner-container flex-col items-center lg:flex-row">
         <div className="flex flex-1 items-center">
-          <div>
-            <div className="h-25 items-left m-1 flex flex-1 flex-col px-5 text-left md:items-start">
-              <h3 className="text-center md:text-left">READY TO LEVEL UP</h3>
-              <h2 className="mb-4 whitespace-pre-line text-center md:text-left">
+          <div className="flex items-center">
+            <div className="h-25 items-left m-1 flex flex-1 flex-col px-5 text-left lg:items-start">
+              <h3 className="text-center lg:text-left">READY TO LEVEL UP</h3>
+              <h2 className="mb-4 whitespace-pre-line text-center lg:text-left">
                 {title}
               </h2>
               {bullets.map((_, index) => (
@@ -34,8 +34,8 @@ const ReadyToLevelUpBanner = () => {
             </div>
           </div>
         </div>
-        <div className="relative flex h-[500px] flex-row items-center justify-center overflow-x-hidden md:overflow-x-visible">
-          <div className="absolute z-0 h-[100px] w-[100px] rounded-full bg-WHITE opacity-100 blur-[120px] md:h-[600px] md:w-[600px] md:opacity-40"></div>
+        <div className="relative flex h-[500px] flex-row items-center justify-center overflow-x-hidden md:h-[600px] lg:h-[500px] lg:overflow-x-visible">
+          <div className="absolute z-0 h-[100px] w-[100px] rounded-full bg-WHITE opacity-100 blur-[120px] lg:h-[600px] lg:w-[600px] lg:opacity-40"></div>
           <div className="flex justify-center">
             <RPhone name="gPhone-L" scale={250} screenshots={["RangeList"]} />
           </div>

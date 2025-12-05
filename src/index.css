@@ -6,9 +6,9 @@
   body {
     @apply max-w-full bg-gradient-to-b from-PRIMARY to-TERTIARY;
   }
-  /* * {
+  * {
     outline: 1px solid red;
-  } */
+  }
   .content-container {
     @apply mx-auto flex w-full max-w-full flex-1 flex-col;
   }
@@ -16,19 +16,19 @@
     @apply fixed left-0 top-0 z-50 flex w-full max-w-full flex-row justify-center;
   }
   .inner-container {
-    @apply flex w-full max-w-full justify-between p-2 font-bold md:max-w-6xl md:p-4;
+    @apply flex w-full max-w-full justify-between p-2 font-bold lg:max-w-6xl lg:p-4;
   }
   h1 {
-    @apply inline-block cursor-pointer select-none text-center text-5xl font-bold text-white hover:scale-105 md:text-6xl;
+    @apply inline-block cursor-pointer select-none text-center text-5xl font-bold text-white hover:scale-105 lg:text-6xl;
   }
   h2 {
-    @apply inline-block cursor-pointer select-none text-center text-2xl font-bold text-white md:text-3xl;
+    @apply inline-block cursor-pointer select-none text-center text-2xl font-bold text-white lg:text-3xl;
   }
   h3 {
-    @apply inline-block cursor-pointer select-none text-center text-lg font-bold text-CONTRASTB hover:scale-105 md:text-lg;
+    @apply inline-block cursor-pointer select-none text-center text-lg font-bold text-CONTRASTB hover:scale-105 lg:text-lg;
   }
   h4 {
-    @apply inline-block cursor-pointer select-none text-left text-xl font-bold text-WHITE md:text-xl;
+    @apply inline-block cursor-pointer select-none text-left text-xl font-bold text-WHITE lg:text-xl;
   }
   p {
     @apply text-base text-CONTRAST;
@@ -43,18 +43,18 @@
     @apply cursor-pointer text-base text-WHITE transition-colors hover:-translate-y-[3px] hover:text-[16.2px] hover:text-CONTRAST;
   }
   .opening-banner {
-    @apply flex flex-col items-center md:flex-row;
+    @apply flex flex-col items-center lg:flex-row;
   }
   .block {
-    @apply flex flex-1 flex-col items-center justify-center text-center;
+    @apply flex flex-1 flex-col items-center justify-center text-center lg:items-start lg:text-left;
   }
   .badge {
-    @apply h-[70px] p-1 md:h-[90px] md:p-3;
+    @apply h-[70px] p-1 lg:h-[90px] lg:p-3;
   }
   .badge-container {
-    @apply flex flex-col items-center justify-center pt-4 md:flex-row md:p-0;
+    @apply flex flex-col items-center justify-center pt-4 lg:flex-row lg:p-0;
   }
   .app-icon {
-    @apply m-5 aspect-square w-[200px] rounded-[50px] shadow-lg md:w-[300px] md:rounded-[75px];
+    @apply m-5 aspect-square w-[200px] rounded-[50px] shadow-lg lg:w-[300px] lg:rounded-[75px];
   }
 }

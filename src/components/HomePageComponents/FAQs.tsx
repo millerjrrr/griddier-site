@@ -34,7 +34,7 @@ export default function FAQs() {
   return (
     <div className="flex:col flex w-full justify-center bg-SECONDARY py-10">
       <div className="inner-container justify-left flex flex-col">
-        <h2 className="pb-3 md:text-left">FAQs</h2>
+        <h2 className="pb-3 lg:text-left">FAQs</h2>
         {FAQ.map((faq: FaqType) => (
           <FAQItem q={faq.q} a={faq.a} />
         ))}

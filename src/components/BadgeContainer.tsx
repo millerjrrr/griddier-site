@@ -2,16 +2,16 @@ import { urls } from "../assets/urls";
 
 const BadgeContainer: React.FC<{ left?: boolean }> = ({ left }) => {
   return (
-    <div className={`badge-container w-full ${left ? "md:align-left" : ""}`}>
+    <div className={`badge-container w-full ${left ? "lg:align-left" : ""}`}>
       <a
         href={urls.appStore}
-        className={"app-link "}
+        className={"app-link"}
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
           src="images/app-store.svg"
-          className={`badge ${left ? "pl-0 md:pl-0" : ""}`}
+          className={`badge ${left ? "pl-0 lg:pl-0" : ""}`}
         />
       </a>
       <a

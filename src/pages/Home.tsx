@@ -6,7 +6,7 @@ import ReadyToLevelUpBanner from "../components/HomePageComponents/ReadyToLevelU
 export default function Home() {
   return (
     <div className="flex flex-col items-start justify-center">
-      <div className="h-[70px] md:h-0"></div>
+      <div className="h-[70px] lg:h-0"></div>
       <OpenBanner />
       <InformationBanner />
       <ReadyToLevelUpBanner />

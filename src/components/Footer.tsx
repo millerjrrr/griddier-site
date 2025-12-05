@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="flex:col flex w-full justify-center bg-PRIMARY">
       <div className="inner-container flex flex-col md:flex-row">
         <div className="block px-4 pt-3 text-left">
-          <h2 className="pb-3">About</h2>
+          <h2 className="pb-3">About Us</h2>
           <p className="text-WHITE">{aboutUs}</p>
         </div>
         <div className="block px-4 pt-3 text-left">

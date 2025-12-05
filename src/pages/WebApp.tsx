@@ -10,7 +10,7 @@ export default function WebApp() {
 
   return (
     <div className="flex w-full flex-1 items-center justify-center">
-      <div className="inner-container select-none justify-center overflow-x-hidden md:overflow-x-visible">
+      <div className="inner-container select-none justify-center overflow-x-hidden lg:overflow-x-visible">
         {showFrame ? (
           <div
             className="relative flex overflow-hidden"
@@ -23,7 +23,7 @@ export default function WebApp() {
             />
             <iframe
               src="/web-app/index.html"
-              className="z-20 flex h-full w-full p-[29px] md:z-50"
+              className="z-20 flex h-full w-full p-[29px] lg:z-50"
               style={{ borderRadius }}
             />
           </div>
