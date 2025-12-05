@@ -34,8 +34,8 @@ const ReadyToLevelUpBanner = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-[500px] flex-1 flex-row items-center justify-center">
-          <div className="absolute z-0 h-[600px] w-[600px] rounded-full bg-WHITE opacity-40 blur-[120px]"></div>
+        <div className="relative flex h-[500px] flex-row items-center justify-center overflow-x-hidden md:overflow-x-visible">
+          <div className="absolute z-0 h-[100px] w-[100px] rounded-full bg-WHITE opacity-100 blur-[120px] md:h-[600px] md:w-[600px] md:opacity-40"></div>
           <div className="flex justify-center">
             <RPhone name="gPhone-L" scale={250} screenshots={["RangeList"]} />
           </div>

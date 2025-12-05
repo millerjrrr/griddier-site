@@ -55,6 +55,6 @@
     @apply flex flex-col items-center justify-center pt-4 md:flex-row md:p-0;
   }
   .app-icon {
-    @apply m-5 aspect-square w-[300px] rounded-[75px] shadow-lg;
+    @apply m-5 aspect-square w-[200px] rounded-[50px] shadow-lg md:w-[300px] md:rounded-[75px];
   }
 }

@@ -33,7 +33,7 @@ const InformationBanner = () => {
   return (
     <div className="flex w-full flex-1 items-center justify-center border-b-2 border-t-2 border-TERTIARY">
       <div className="absolute z-0 h-[20px] w-full rounded-full bg-WHITE opacity-100 blur-[100px]"></div>
-      <div className="inner-container flex-col md:flex-row">
+      <div className="inner-container flex-col overflow-x-hidden md:flex-row md:overflow-x-visible">
         <div className="order-1 flex items-center md:order-2">
           <div>
             <div className="h-25 m-5 flex flex-1 flex-col items-start px-5 text-left">
@@ -52,8 +52,9 @@ const InformationBanner = () => {
           </div>
         </div>
 
-        <div className="order-2 flex justify-center md:order-1 md:px-[60px]">
-          <RPhone name="sPhone" screenshots={["RangeModal"]} />
+        <div className="relative order-2 flex max-w-full justify-center overflow-x-hidden md:order-1 md:overflow-x-visible md:px-[60px]">
+          <div className="absolute z-0 h-[100px] w-[100px] rounded-full bg-WHITE opacity-100 blur-[120px] md:h-[600px] md:w-[600px] md:opacity-20"></div>
+          <RPhone name="sPhone" scale={350} screenshots={["RangeModal"]} />
         </div>
       </div>
     </div>

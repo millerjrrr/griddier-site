@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div>
-      <div className="h-15"></div>
+      <div className="h-[70px] md:h-[100px]"></div>
       <header className="header">
         <div className="inner-container flex-row">
           <img
@@ -23,7 +23,7 @@ export default function Header() {
               show ? "opacity-100" : "md:opacity-0"
             }`}
           />
-          <div className="flex flex-row rounded-l-full border-2 border-r-0 border-TERTIARY bg-PRIMARY pl-2 md:border-0 md:bg-transparent">
+          <div className="flex translate-x-[8px] flex-row rounded-l-full border-2 border-r-0 border-TERTIARY bg-PRIMARY pl-2 md:border-0 md:bg-transparent">
             <a href="/" className="app-link p-2">
               HOME
             </a>

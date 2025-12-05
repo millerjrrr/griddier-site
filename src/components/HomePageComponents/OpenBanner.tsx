@@ -7,7 +7,7 @@ const OpenBanner = () => {
 
   return (
     <div className="flex w-full flex-1 items-center justify-center">
-      <div className="inner-container opening-banner">
+      <div className="inner-container opening-banner overflow-x-hidden md:overflow-x-visible">
         <div className="block inline-block flex animate-pulseScale justify-center">
           <img className="app-icon" src="app-icon.png" />
           <h1 className="">{title}</h1>
@@ -15,8 +15,8 @@ const OpenBanner = () => {
           <p className="pb-1 font-bold md:text-xl">{tagLine}</p>
           <BadgeContainer />
         </div>
-        <div className="flex items-center justify-center">
-          <div className="absolute z-0 h-[600px] w-[600px] rounded-full bg-TERTIARY opacity-40 blur-[120px]"></div>
+        <div className="flex items-center justify-center overflow-x-hidden md:flex-row md:overflow-x-visible">
+          <div className="absolute z-0 h-[100px] w-[100px] rounded-full bg-TERTIARY opacity-100 blur-[120px] md:h-[600px] md:w-[600px] md:opacity-20"></div>
           <RPhone name="iPhone" />
         </div>
       </div>
