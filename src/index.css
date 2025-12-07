@@ -19,13 +19,16 @@
   header {
     @apply fixed left-0 top-0 z-50 flex w-full max-w-full flex-row justify-center;
   }
+  .header-filler {
+    @apply h-[60px];
+  }
 
   .inner-container {
     @apply flex w-full max-w-full p-2 font-bold lg:max-w-6xl lg:p-4;
   }
 
   h1 {
-    @apply inline-block cursor-pointer select-none text-center text-5xl font-bold hover:scale-105 lg:text-6xl;
+    @apply inline-block cursor-pointer select-none text-center text-4xl font-bold md:text-5xl lg:text-6xl;
     color: white;
   }
 
@@ -35,7 +38,7 @@
   }
 
   h3 {
-    @apply inline-block cursor-pointer select-none text-center text-lg font-bold hover:scale-105 lg:text-lg;
+    @apply inline-block cursor-pointer select-none text-center text-lg font-bold lg:text-lg;
     color: var(--contrast-b);
   }
 
@@ -52,7 +55,8 @@
 
 @layer components {
   .site-icon {
-    @apply aspect-square w-12 rounded-[12px] shadow-lg;
+    @apply aspect-square w-12 rounded-[12px];
+    box-shadow: 0 0 5px 0 var(--contrast-c);
   }
 
   .app-link {
@@ -81,7 +85,8 @@
   }
 
   .app-icon {
-    @apply m-5 aspect-square w-[200px] rounded-[50px] shadow-lg lg:w-[300px] lg:rounded-[75px];
+    @apply m-5 aspect-square w-[200px] rounded-[50px] lg:w-[300px] lg:rounded-[75px];
+    box-shadow: 0 0 10px 0 var(--contrast-c);
   }
 
   .profile-image {
@@ -92,5 +97,26 @@
   .personal-detail {
     @apply flex flex-row items-center p-2;
     color: var(--contrast-c);
+  }
+
+  .t-and-c {
+    @apply mx-4 my-10 flex flex-1 flex-col rounded-[30px] bg-[var(--secondary)] p-3 shadow-[0_0_10px_0_rgba(255,255,255,0.9)] md:mx-0 md:p-5;
+  }
+  .t-and-c-scroll-wrapper {
+    @apply flex h-[300px] flex-col rounded-[10px] bg-[var(--primary)] p-2;
+  }
+  .t-and-c-scroll {
+    @apply flex flex-1 flex-col overflow-y-scroll p-1;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE & Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
   }
 }

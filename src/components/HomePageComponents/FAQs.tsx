@@ -15,15 +15,15 @@ const FAQItem: React.FC<FaqType> = ({ q, a }) => {
   return (
     <div className="flex flex-col p-1">
       <div
-        className="flex flex-row items-start hover:scale-105 hover:text-[var(--contrast-b)]"
+        className="flex flex-row items-start text-[var(--contrast-c)] hover:scale-105 hover:pl-6 hover:text-[var(--contrast)]"
         onClick={() => toggle(!open)}
       >
-        {<Icon size={24} className="m-[2px] text-[var(--contrast-c)]" />}
+        {<Icon size={24} className="m-[2px]" />}
         <div className="flex flex-1">
-          <h4>{q}</h4>
+          <h4 style={{ color: "inherit" }}>{q}</h4>
         </div>
       </div>
-      <p className={`pl-6 text-left ${open ? "footer-block" : "hidden"}`}>
+      <p className={`pl-6 text-left ${open ? "footer-block" : "hidden"} `}>
         {a}
       </p>
     </div>

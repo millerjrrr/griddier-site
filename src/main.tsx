@@ -3,12 +3,36 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import { getSiteContent } from "./getSiteContent";
+import { getSiteContent, getSiteKey } from "./getSiteContent";
 
 const site = getSiteContent();
+const siteKey = getSiteKey();
 
 // Inject theme vars before rendering
 const root = document.documentElement;
+
+document.title = site.meta.title;
+
+const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+if (favicon) {
+  favicon.href = `/app-specific/${siteKey}/favicon.ico`;
+}
+
+document
+  .querySelector("meta[name='description']")
+  ?.setAttribute("content", site.meta.description);
+
+document
+  .querySelector("meta[property='og:title']")
+  ?.setAttribute("content", site.meta.title);
+
+// document
+//   .querySelector("meta[property='og:image']")
+//   ?.setAttribute("content", site.ogImage);
+
+// document
+//   .querySelector("meta[property='og:description']")
+//   ?.setAttribute("content", site.description);
 
 root.style.setProperty("--primary", site.colors.PRIMARY);
 root.style.setProperty("--secondary", site.colors.SECONDARY);

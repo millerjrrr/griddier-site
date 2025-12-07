@@ -1,9 +1,16 @@
+export type PageName = "home" | "web-app" | "contact";
+
+export interface Bullet {
+  title: string;
+  description: string;
+}
+
 interface ContentStructure {
-  header: {
-    tab1: string;
-    tab2: string;
-    tab3?: string;
+  meta: {
+    title: string;
+    description: string;
   };
+  pageNames: PageName[];
   footer: {
     aboutUs: string;
     address: string;
@@ -25,6 +32,18 @@ interface ContentStructure {
       bullets: string[];
     };
     FAQ: { q: `${string}?`; a: string }[];
+  };
+  contact: {
+    email: string;
+    description: string;
+  };
+  termsAndConditions: {
+    description: string;
+    bullets: [Bullet, Bullet, Bullet, ...Bullet[]];
+  };
+  privacyPolicy: {
+    description: string;
+    bullets: [Bullet, Bullet, Bullet, ...Bullet[]];
   };
   colors: {
     PRIMARY: `#${string}`;

@@ -2,6 +2,9 @@ import { Center, useGLTF } from "@react-three/drei";
 import { useFrame, Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect, useRef, useState, useMemo } from "react";
+import { getSiteKey } from "../getSiteContent";
+
+const siteKey = getSiteKey();
 
 interface RPhoneProps {
   name: "iPhone" | "sPhone" | "gPhone-L" | "gPhone-R";
@@ -11,7 +14,7 @@ interface RPhoneProps {
 
 const RotatingPhone: React.FC<RPhoneProps> = ({
   name = "iPhone",
-  screenshots = ["app-specific/griddier/screenshots/Trainer.jpg"],
+  screenshots = [`app-specific/${siteKey}/screenshots/1.jpg`],
 }) => {
   let source = "/models/iPhone.glb";
   let screenMeshName = "LLCOsMNMwTSiaFM_0";
@@ -272,7 +275,7 @@ const RotatingPhone: React.FC<RPhoneProps> = ({
 
 export const RPhone: React.FC<RPhoneProps> = ({
   scale = 350,
-  screenshots = ["Trainer"],
+  screenshots = ["1"],
   name,
 }) => {
   let width = Math.min(scale, window.innerWidth - 50);
@@ -286,7 +289,7 @@ export const RPhone: React.FC<RPhoneProps> = ({
 
   const fileRoutes = screenshots.map(
     (screenshotName) =>
-      `app-specific/griddier/screenshots/${screenshotName}.jpg`,
+      `app-specific/${siteKey}/screenshots/${screenshotName}.jpg`,
   );
 
   return (
@@ -297,7 +300,6 @@ export const RPhone: React.FC<RPhoneProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        // backgroundColor: "red",
       }}
     >
       <Canvas camera={{ position }}>

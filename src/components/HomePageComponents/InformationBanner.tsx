@@ -54,7 +54,7 @@ const InformationBanner = () => {
 
         <div className="relative order-2 flex max-w-full justify-center overflow-x-hidden lg:order-1 lg:overflow-x-visible lg:px-[60px]">
           <div className="absolute z-0 h-[100px] w-[100px] rounded-full bg-[var(--contrast-c)] opacity-100 blur-[120px] lg:h-[600px] lg:w-[600px] lg:opacity-20"></div>
-          <RPhone name="sPhone" scale={350} screenshots={["RangeModal"]} />
+          <RPhone name="sPhone" scale={350} screenshots={["2"]} />
         </div>
       </div>
     </div>
