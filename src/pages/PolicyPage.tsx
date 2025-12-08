@@ -11,7 +11,11 @@ const PolicyPage: React.FC<{
       <div className="header-filler" />
       <div className="inner-container">
         <div className="t-and-c">
-          <h1 className="text-left">Privacy Policy</h1>
+          <h1 className="text-left">
+            {type === "termsAndConditions"
+              ? "Terms and Conditions"
+              : "Privacy Policy"}
+          </h1>
           <p className="pb-5 pl-2 md:pl-10">Effective Date: December 7, 2025</p>
           <p className="py-4">{description}</p>
           <div className="t-and-c-scroll-wrapper">

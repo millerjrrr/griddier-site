@@ -1,10 +1,12 @@
-import { urls } from "../assets/urls";
+import { getSiteContent } from "../getSiteContent";
 
 const BadgeContainer: React.FC<{ left?: boolean }> = ({ left }) => {
+  const { appStore, playStore } = getSiteContent();
+
   return (
     <div className={`badge-container w-full ${left ? "lg:align-left" : ""}`}>
       <a
-        href={urls.appStore}
+        href={appStore}
         className={"app-link"}
         target="_blank"
         rel="noopener noreferrer"
@@ -15,7 +17,7 @@ const BadgeContainer: React.FC<{ left?: boolean }> = ({ left }) => {
         />
       </a>
       <a
-        href={urls.playStore}
+        href={playStore}
         className="app-link"
         target="_blank"
         rel="noopener noreferrer"

@@ -6,6 +6,8 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import WebApp from "./pages/WebApp";
 import PolicyPage from "./pages/PolicyPage";
+import BlogHome from "./pages/BlogHome";
+import BlogPost from "./pages/BlogPost";
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
             path="/terms-and-conditions"
             element={<PolicyPage type="termsAndConditions" />}
           />
+          <Route path="/blog" element={<BlogHome />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </main>
       <Footer />

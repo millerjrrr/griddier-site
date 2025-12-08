@@ -2,12 +2,15 @@ import type { SitesStructure } from "./interface";
 
 const sites: SitesStructure = {
   "link-king": {
+    appStore: "https://apps.apple.com/br/app/link-king/id6496679226",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.linkoking.app",
     meta: {
       title: "Link-King",
       description:
         "A language learning app designed to help advanced language learners expand their vocabulary",
     },
-    pageNames: ["home", "web-app", "contact"],
+    pageNames: ["home", "web-app", "blog", "contact"],
     footer: {
       aboutUs:
         "Link-King is a language learning app, designed to help advanced learners rapidly improve their vocabulary in a new language. By building lasting connections between words in your native language and their equivalents in your target language, this approach offers a smarter and more efficient way to expand your vocabulary.",
@@ -75,7 +78,7 @@ const sites: SitesStructure = {
     contact: {
       email: "jacob@link-king.com",
       description:
-        "Hi, I'm Jacob, professional poker player since 2018, amateur software developer and the creator of Griddier.\n\nGriddier is a simple but powerful app that has allowed me and now others to memorize complex preflop grids. Perfectly!",
+        "Hi, I'm Jacob, expat, language learner and creator of Link-King.\n\nLearning a new language in your late 20s early 30s isn't easy but Link-King has helped me take my Portuguese to a very high level.\n\nCheck out our blog to learn more!",
     },
     termsAndConditions: {
       description:
@@ -223,6 +226,8 @@ const sites: SitesStructure = {
   },
 
   griddier: {
+    appStore: "https://apps.apple.com/us/app/griddier/id6749179562",
+    playStore: "https://play.google.com/apps/internaltest/4700753610199726469",
     meta: {
       title: "Griddier",
       description:

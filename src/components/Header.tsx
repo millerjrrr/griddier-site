@@ -47,7 +47,7 @@ export default function Header() {
           />
           <div className="flex translate-x-[8px] flex-row rounded-l-full border-2 border-r-0 border-[var(--tertiary)] bg-[var(--primary)] pl-2 md:border-0 md:bg-transparent">
             {pageNames.map((pageName) => (
-              <HeaderLink pageName={pageName} />
+              <HeaderLink key={pageName} pageName={pageName} />
             ))}
           </div>
         </div>

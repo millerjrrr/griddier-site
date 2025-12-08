@@ -1,4 +1,4 @@
-export type PageName = "home" | "web-app" | "contact";
+export type PageName = "home" | "web-app" | "contact" | "blog";
 
 export interface Bullet {
   title: string;
@@ -6,6 +6,8 @@ export interface Bullet {
 }
 
 interface ContentStructure {
+  appStore: string;
+  playStore: string;
   meta: {
     title: string;
     description: string;

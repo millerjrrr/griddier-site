@@ -4,6 +4,9 @@ import App from "./App";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { getSiteContent, getSiteKey } from "./getSiteContent";
+import { Buffer } from "buffer";
+
+window.Buffer = Buffer;
 
 const site = getSiteContent();
 const siteKey = getSiteKey();

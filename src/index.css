@@ -60,11 +60,12 @@
   }
 
   .app-link {
-    @apply cursor-pointer text-base transition-colors hover:-translate-y-[3px] hover:text-[16.2px];
+    @apply cursor-pointer text-base transition-colors;
     color: var(--contrast-c);
   }
 
   .app-link:hover {
+    @apply -translate-y-[3px] text-[16.2px];
     color: var(--contrast);
   }
 
@@ -100,13 +101,74 @@
   }
 
   .t-and-c {
-    @apply mx-4 my-10 flex flex-1 flex-col rounded-[30px] bg-[var(--secondary)] p-3 shadow-[0_0_10px_0_rgba(255,255,255,0.9)] md:mx-0 md:p-5;
+    @apply mx-4 my-10 flex flex-1 flex-col rounded-[30px] bg-[var(--secondary)] p-3 md:mx-0 md:p-5;
+    box-shadow: 0 0 10px 0 var(--contrast-c);
   }
   .t-and-c-scroll-wrapper {
     @apply flex h-[300px] flex-col rounded-[10px] bg-[var(--primary)] p-2;
   }
   .t-and-c-scroll {
     @apply flex flex-1 flex-col overflow-y-scroll p-1;
+  }
+  .blog-card {
+    @apply card-shadow flex w-[250px] flex-col rounded-lg bg-[var(--primary)] p-4 md:w-[350px];
+  }
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 14px 2px var(--contrast-c);
+  }
+  .card-shadow {
+    box-shadow: 0 0 10px 0 var(--contrast-c);
+  }
+  ,
+  .prose br {
+    display: block;
+    margin-bottom: 1rem;
+    content: "";
+  }
+  .prose p {
+    margin-bottom: 1.2em;
+  }
+  .prose a {
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+    color: var(--contrast);
+  }
+  .prose a:hover {
+    @apply -translate-y-[3px] text-[16.2px];
+    color: var(--contrast-c);
+  }
+  .prose h1 {
+    @apply py-5;
+  }
+  .prose h2 {
+    @apply py-2;
+  }
+  .prose ul {
+    color: var(--contrast-c);
+    padding-left: 1.25rem; /* indent */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose ul > li {
+    color: var(--contrast-c);
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+    position: relative;
+  }
+
+  .prose ul li::before {
+    content: "•"; /* your icon here */
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+
+  .prose ul > li::marker {
+    color: var(--contrast-c);
+    font-size: 1.1em;
   }
 }
 
