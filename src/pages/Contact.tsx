@@ -23,8 +23,8 @@ const Contact = () => {
               <MdEmail className="mr-2 text-lg text-[var(--contrast-c)]" />
               <p className="whitespace-nowrap">{email}</p>
             </div>
-            <div className="personal-detail">
-              <FaLinkedin className="mr-2 text-lg text-[var(--contrast-c)]" />
+            <div className="personal-detail app-link">
+              <FaLinkedin className="mr-2 text-lg text-inherit" />
               <a
                 href="https://www.linkedin.com/in/jacobmiller93/"
                 target="_blank"
@@ -32,8 +32,8 @@ const Contact = () => {
                 LinkedIn
               </a>
             </div>
-            <div className="personal-detail">
-              <FaGithub className="mr-2 text-lg text-[var(--contrast-c)]" />
+            <div className="personal-detail app-link">
+              <FaGithub className="mr-2 text-lg text-inherit" />
               <a href="https://github.com/millerjrrr" target="_blank">
                 GitHub
               </a>
