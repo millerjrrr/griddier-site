@@ -1,0 +1,15 @@
+# Ignore build artifacts
+dist/* linguist-vendored
+build/* linguist-vendored
+
+# Ignore all compiled JS
+*.js linguist-generated=true
+
+# Ignore vendor JS bundles
+public/**/*.js linguist-vendored
+app-specific/**/*.js linguist-vendored
+
+# Ignore Three.js build artifacts
+assets/**/*.js linguist-vendored
+models/**/*.js linguist-vendored
+scripts/**/*.js linguist-vendored

@@ -14,7 +14,7 @@ export default function WebApp() {
 
   return (
     <div className="flex w-full flex-1 items-center justify-center">
-      <div className="inner-container select-none justify-center overflow-x-hidden lg:overflow-x-visible">
+      <div className="inner-container justify-center overflow-x-hidden lg:overflow-x-visible">
         {showFrame ? (
           <div
             className="relative flex overflow-hidden"
@@ -27,8 +27,8 @@ export default function WebApp() {
             />
             <iframe
               src={`/app-specific/${siteKey}/web-app/index.html`}
-              className="z-20 flex h-full w-full p-[29px] lg:z-50"
-              style={{ borderRadius }}
+              className="z-20 flex h-full min-h-0 w-full overflow-auto p-[29px] lg:z-50"
+              style={{ borderRadius, border: "none" }}
             />
           </div>
         ) : (
@@ -36,7 +36,7 @@ export default function WebApp() {
             <div className="h-[50px]"></div>
             <iframe
               src={`/app-specific/${siteKey}/web-app/index.html`}
-              className="flex w-full"
+              className="flex w-full overflow-auto"
               style={{ height, maxWidth: width * 1.1 }}
             />
           </div>
