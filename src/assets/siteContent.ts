@@ -24,6 +24,7 @@ const sites: SitesStructure = {
         tagLine:
           "A mobile app designed to help advanced students expand their vocabulary",
       },
+      videoPromotion: "https://www.youtube.com/embed/oKCh8pWhjF0",
       informationBanner: {
         introductionTitle: "Our Optimized Approach",
         introductionText:

@@ -2,6 +2,7 @@ import FAQs from "../components/HomePageComponents/FAQs";
 import InformationBanner from "../components/HomePageComponents/InformationBanner";
 import OpenBanner from "../components/HomePageComponents/OpenBanner";
 import ReadyToLevelUpBanner from "../components/HomePageComponents/ReadyToLevelUpBanner";
+import VideoBanner from "../components/HomePageComponents/VideoBanner";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <InformationBanner />
       <ReadyToLevelUpBanner />
       <FAQs />
+      <VideoBanner />
     </div>
   );
 }

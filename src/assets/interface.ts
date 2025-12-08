@@ -23,6 +23,7 @@ interface ContentStructure {
       subTitle: string;
       tagLine: string;
     };
+    videoPromotion?: string;
     informationBanner: {
       introductionTitle: string;
       introductionText: string;
