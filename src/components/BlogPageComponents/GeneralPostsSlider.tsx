@@ -37,14 +37,14 @@ export default function GeneralPostsSlider({ posts }: GeneralPostsSliderProps) {
 
         <button
           onClick={() => slide("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+          className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)] px-3 py-2 text-[var(--contrast-c)] opacity-[50%] hover:opacity-[90%]"
         >
           ❮
         </button>
 
         <button
           onClick={() => slide("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+          className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)] px-3 py-2 text-[var(--contrast-c)] opacity-[50%] hover:opacity-[90%]"
         >
           ❯
         </button>

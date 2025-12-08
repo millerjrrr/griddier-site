@@ -7,7 +7,10 @@ const Contact = () => {
 
   return (
     <div className="flex w-full flex-1 items-center justify-center p-5 py-20">
-      <div className="inner-container flex-col items-center rounded-[30px] bg-[var(--secondary)] shadow-[0_0_10px_0_rgba(255,255,255,0.9)]">
+      <div
+        className="inner-container flex-col items-center rounded-[30px] bg-[var(--secondary)]"
+        style={{ boxShadow: "0 0 10px 0 var(--contrast-c)" }}
+      >
         <h1 className="p-10">Contact</h1>
         <div className="flex flex-col items-center pb-10 lg:flex-row">
           <img

@@ -27,12 +27,12 @@
 
   h1 {
     @apply inline-block cursor-pointer select-none text-center text-4xl font-bold md:text-5xl lg:text-6xl;
-    color: white;
+    color: var(--contrast-c);
   }
 
   h2 {
     @apply inline-block cursor-pointer select-none text-center text-2xl font-bold lg:text-3xl;
-    color: white;
+    color: var(--contrast-c);
   }
 
   h3 {

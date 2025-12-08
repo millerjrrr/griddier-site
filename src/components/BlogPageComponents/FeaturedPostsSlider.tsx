@@ -25,7 +25,7 @@ export default function FeaturedPostsSlider({
   };
 
   return (
-    <div className="group relative h-[300px] w-full overflow-hidden shadow-lg md:h-[500px] lg:h-[600px]">
+    <div className="group relative h-[300px] w-full overflow-hidden md:h-[500px] lg:h-[600px]">
       {/* IMAGE */}
       <Link to={`/blog/${slide.slug}`}>
         <img
@@ -37,10 +37,8 @@ export default function FeaturedPostsSlider({
       </Link>
 
       {/* TEXT */}
-      <div className="absolute bottom-6 left-6 right-6 text-white">
-        <h2 className="mb-1 text-2xl font-bold drop-shadow-lg sm:text-3xl">
-          {slide.title}
-        </h2>
+      <div className="absolute bottom-6 left-6 right-6 text-[var(--contrast-c)]">
+        <h2 className="mb-1 text-2xl font-bold sm:text-3xl">{slide.title}</h2>
         <p className="text-sm opacity-80">
           {new Date(slide.date).toLocaleDateString()}
         </p>
@@ -49,7 +47,7 @@ export default function FeaturedPostsSlider({
       {/* LEFT ARROW */}
       <button
         onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)] px-3 py-2 text-[var(--contrast-c)] opacity-[50%] hover:opacity-[90%]"
       >
         ❮
       </button>
@@ -57,7 +55,7 @@ export default function FeaturedPostsSlider({
       {/* RIGHT ARROW */}
       <button
         onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)] px-3 py-2 text-[var(--contrast-c)] opacity-[50%] hover:opacity-[90%]"
       >
         ❯
       </button>
@@ -68,7 +66,7 @@ export default function FeaturedPostsSlider({
           <div
             key={i}
             onClick={() => setIndex(i)}
-            className={`h-2 w-2 cursor-pointer rounded-full transition-all ${i === index ? "scale-125 bg-white" : "bg-white/40"} `}
+            className={`h-2 w-2 cursor-pointer rounded-full bg-[var(--contrast-c)] transition-all ${i === index ? "scale-125" : "opacity-[50%]"} `}
           />
         ))}
       </div>

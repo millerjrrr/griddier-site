@@ -14,11 +14,12 @@ const BannerCard: React.FC<{
   return (
     <div
       ref={ref}
-      className={`m-5 flex h-[175px] flex-col items-start justify-center rounded-2xl bg-[var(--primary)] p-5 text-left shadow-[0_0_20px_0_rgba(255,255,255,0.9)] lg:h-[125px] ${
+      className={`m-5 flex h-[175px] flex-col items-start justify-center rounded-2xl bg-[var(--primary)] p-5 text-left lg:h-[125px] ${
         inView
           ? `animate-flyInRight ${delays[delay]}`
           : "translate-x-[60px] opacity-0"
       } `}
+      style={{ boxShadow: "0 0 10px 0 var(--contrast-c)" }}
     >
       <h3>{title}</h3>
       <p>{description}</p>

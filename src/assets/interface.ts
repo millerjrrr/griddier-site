@@ -5,7 +5,7 @@ export interface Bullet {
   description: string;
 }
 
-interface ContentStructure {
+export interface ContentStructure {
   appStore: string;
   playStore: string;
   meta: {
@@ -61,6 +61,7 @@ interface ContentStructure {
 export interface SitesStructure {
   "link-king": ContentStructure;
   griddier: ContentStructure;
+  "banana-cards": ContentStructure;
 }
 
 export type SiteKey = keyof SitesStructure;

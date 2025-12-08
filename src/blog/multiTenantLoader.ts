@@ -11,6 +11,10 @@ const tenantModules: Record<SiteKey, Record<string, GlobModule>> = {
     eager: true,
     query: "?raw",
   }) as Record<string, GlobModule>,
+  "banana-cards": import.meta.glob("./banana-cards/*.md", {
+    eager: true,
+    query: "?raw",
+  }) as Record<string, GlobModule>,
 };
 
 export function getAllPosts(): PostSummary[] {
