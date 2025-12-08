@@ -22,31 +22,33 @@ export default function GeneralPostsSlider({ posts }: GeneralPostsSliderProps) {
   }, []);
 
   return (
-    <div className="relative mt-10 w-full">
-      <div
-        id="general-posts-slider"
-        className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth p-4 [scroll-padding-left:1rem] [scroll-padding-right:1rem] sm:justify-start [&>*]:snap-start"
-      >
-        {posts.map((p) => (
-          <div key={p.slug} className="flex w-full">
-            <BlogCard {...p} />
-          </div>
-        ))}
+    <div className="mt-10 max-w-full p-5">
+      <div className="relative">
+        <div
+          id="general-posts-slider"
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth p-4 [scroll-padding-left:1rem] [scroll-padding-right:1rem] sm:justify-start [&>*]:snap-start"
+        >
+          {posts.map((p) => (
+            <div key={p.slug} className="flex w-full">
+              <BlogCard {...p} />
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={() => slide("left")}
+          className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+        >
+          ❮
+        </button>
+
+        <button
+          onClick={() => slide("right")}
+          className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+        >
+          ❯
+        </button>
       </div>
-
-      <button
-        onClick={() => slide("left")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
-      >
-        ❮
-      </button>
-
-      <button
-        onClick={() => slide("right")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
-      >
-        ❯
-      </button>
     </div>
   );
 }

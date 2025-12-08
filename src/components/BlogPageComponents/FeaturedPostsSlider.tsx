@@ -25,7 +25,7 @@ export default function FeaturedPostsSlider({
   };
 
   return (
-    <div className="group relative h-[300px] w-full overflow-hidden rounded-xl shadow-lg lg:h-[400px] lg:h-[500px]">
+    <div className="group relative h-[300px] w-full overflow-hidden shadow-lg md:h-[500px] lg:h-[600px]">
       {/* IMAGE */}
       <Link to={`/blog/${slide.slug}`}>
         <img

@@ -1,3 +1,5 @@
+@tailwind base;
+
 @layer base {
   body {
     @apply max-w-full bg-gradient-to-b;

@@ -20,7 +20,7 @@ export default function BlogPost() {
             <img
               src={`/app-specific/${siteKey}/thumbnails/${post.thumbnail}`}
               alt={post.title}
-              className="mb-1 h-[300px] w-full rounded-xl object-cover"
+              className="mb-1 w-full rounded-xl object-cover"
             />
           )}
 
