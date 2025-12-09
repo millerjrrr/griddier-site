@@ -29,13 +29,17 @@ document
   .querySelector("meta[property='og:title']")
   ?.setAttribute("content", site.meta.title);
 
-// document
-//   .querySelector("meta[property='og:image']")
-//   ?.setAttribute("content", site.ogImage);
+document
+  .querySelector("meta[property='og:image']")
+  ?.setAttribute("content", `/app-specific/${siteKey}/icon.png`);
 
-// document
-//   .querySelector("meta[property='og:description']")
-//   ?.setAttribute("content", site.description);
+document
+  .querySelector("meta[property='apple-touch-icon']")
+  ?.setAttribute("content", `/app-specific/${siteKey}/icon.png`);
+
+document
+  .querySelector("meta[property='og:description']")
+  ?.setAttribute("content", site.meta.description);
 
 root.style.setProperty("--primary", site.colors.PRIMARY);
 root.style.setProperty("--secondary", site.colors.SECONDARY);
