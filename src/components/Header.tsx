@@ -3,6 +3,8 @@ import { getSiteContent, getSiteKey } from "../getSiteContent";
 import type { PageName } from "../assets/interface";
 
 const HeaderLink: React.FC<{ pageName: PageName }> = ({ pageName }) => {
+  const siteKey = getSiteKey();
+
   const url =
     pageName === "home"
       ? "/"
@@ -10,7 +12,20 @@ const HeaderLink: React.FC<{ pageName: PageName }> = ({ pageName }) => {
         ? "/mobile-app"
         : `/${pageName}`;
 
-  return (
+  return siteKey === "link-king" && pageName === "web-app" ? (
+    <p
+      className="app-link p-2"
+      onClick={() => {
+        window.open(
+          "https://app.link-king.com",
+          "linkKingApp",
+          "width=472,height=900,top=100,left=0",
+        );
+      }}
+    >
+      WEB APP
+    </p>
+  ) : (
     <a href={url} className="app-link p-2">
       {pageName.replace("-", " ").toUpperCase()}
     </a>
