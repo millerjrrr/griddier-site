@@ -1,4 +1,4 @@
-import metaConfig from "../assets/meta.json";
+import metaConfig from "../src/assets/meta.json";
 
 export async function onRequest(context) {
   const { request, next } = context;
