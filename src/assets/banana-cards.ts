@@ -1,6 +1,7 @@
 import type { ContentStructure } from "./interface";
 
 const bananaCards: ContentStructure = {
+  canonicalDomain: "banana-cards.com",
   appStore: "https://apps.apple.com/dk/app/banana-cards/id6749454845?l=da",
   playStore:
     "https://play.google.com/store/apps/details?id=com.bananacards.app",

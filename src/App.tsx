@@ -8,8 +8,11 @@ import WebApp from "./pages/WebApp";
 import PolicyPage from "./pages/PolicyPage";
 import BlogHome from "./pages/BlogHome";
 import BlogPost from "./pages/BlogPost";
+import { useCanonical } from "./hooks/useCanonical";
 
 export default function App() {
+  useCanonical();
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />

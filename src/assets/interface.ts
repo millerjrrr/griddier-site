@@ -6,6 +6,7 @@ export interface Bullet {
 }
 
 export interface ContentStructure {
+  canonicalDomain: string;
   appStore: string;
   playStore: string;
   meta: {
